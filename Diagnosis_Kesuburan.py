@@ -190,23 +190,11 @@ def klasifikasi_kesuburan(prediksi):
     else:
         return 'Normal'
 
-# print hasil ke 5 orang untuk test
-print('Arin, prediksi kesuburan:',klasifikasi_kesuburan(logistic_model.predict(arin)),'(Logistic Regression)')
-print('Arin, prediksi kesuburan:',klasifikasi_kesuburan(svm_model.predict(arin)),'(Support Vector Machines)')
-print('Arin, prediksi kesuburan:',klasifikasi_kesuburan(knn_model.predict(arin)),'(K-Nearest Neighbors)')
-print('\n')
-print('Bebi, prediksi kesuburan:',klasifikasi_kesuburan(logistic_model.predict(bebi)),'(Logistic Regression)')
-print('Bebi, prediksi kesuburan:',klasifikasi_kesuburan(svm_model.predict(bebi)),'(Support Vector Machines)')
-print('Bebi, prediksi kesuburan:',klasifikasi_kesuburan(knn_model.predict(bebi)),'(K-Nearest Neighbors)')
-print('\n')
-print('Caca, prediksi kesuburan:',klasifikasi_kesuburan(logistic_model.predict(caca)),'(Logistic Regression)')
-print('Caca, prediksi kesuburan:',klasifikasi_kesuburan(svm_model.predict(caca)),'(Support Vector Machines)')
-print('Caca, prediksi kesuburan:',klasifikasi_kesuburan(knn_model.predict(caca)),'(K-Nearest Neighbors)')
-print('\n')
-print('Dini, prediksi kesuburan:',klasifikasi_kesuburan(logistic_model.predict(dini)),'(Logistic Regression)')
-print('Dini, prediksi kesuburan:',klasifikasi_kesuburan(svm_model.predict(dini)),'(Support Vector Machines)')
-print('Dini, prediksi kesuburan:',klasifikasi_kesuburan(knn_model.predict(dini)),'(K-Nearest Neighbors)')
-print('\n')
-print('Enno, prediksi kesuburan:',klasifikasi_kesuburan(logistic_model.predict(enno)),'(Logistic Regression)')
-print('Enno, prediksi kesuburan:',klasifikasi_kesuburan(svm_model.predict(enno)),'(Support Vector Machines)')
-print('Enno, prediksi kesuburan:',klasifikasi_kesuburan(knn_model.predict(enno)),'(K-Nearest Neighbors)')
+karakter_sample = [arin,bebi,caca,dini,enno]
+nama_sample = ['Arin','Bebi','Caca','Dini','Enno']
+
+for i in  range(len(karakter_sample)):
+    print(f'{nama_sample[i]}, prediksi kesuburan:',klasifikasi_kesuburan(logistic_model.predict(karakter_sample[i])),'(Logistic Regression)')
+    print(f'{nama_sample[i]}, prediksi kesuburan:',klasifikasi_kesuburan(svm_model.predict(karakter_sample[i])),'(Support Vector Machines)')
+    print(f'{nama_sample[i]}, prediksi kesuburan:',klasifikasi_kesuburan(knn_model.predict(karakter_sample[i])),'(K-Nearest Neighbors)')
+    print('\n')
